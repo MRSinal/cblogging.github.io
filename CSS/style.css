@@ -1,0 +1,301 @@
+body{
+    margin: 0%;
+    box-sizing: border-box;
+    background-image: url(../assets/Coding3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+:root{
+    --clr-primary: #7FDBFF;
+    --fs-700: 1.8rem;
+    --fs-400: 1.5rem;   
+}
+.resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
+  }
+/*-------Global Classes ------*/
+
+a{
+    text-decoration: none;
+    
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+ul{
+    list-style-type: none;
+}
+.flex{
+    display:flex;
+    gap: var(--gap, 1rem);
+}
+.grid{
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+.text-primary{
+    color: var(--clr-primary);
+}
+.grid--columns{
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+}
+
+/* -------navbar-------*/
+
+.nav{
+    padding: 0 2rem;
+    height: 0rem;
+    min-height: 15vh;
+    overflow: hidden;
+}
+.nav .nav-brand a{
+    font-size:2rem;
+    padding:1rem 1.5rem;
+    font-family: 'Monsterrat', sans-serif;
+    position:relative;
+    top: 15%;
+    font-weight: 600;
+   color: white;
+}
+.nav .nav-items{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.nav .nav-menu{
+    justify-content: space-between;
+    margin: 1rem 0rem;
+}
+.nav .nav-items .nav-link{
+    padding: 1rem 1.5rem;
+    position: relative;
+    font-size: 1.1rem;
+    color: white;
+
+    
+}
+
+.nav .nav-items a{
+    color: white;
+    text-transform: uppercase;
+    font-size: 1rem;
+    display: inline-block;
+    font-family: 'Monsterrat', sans-serif;
+    font-weight: 800;
+
+}
+.nav .nav-items a:after{
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 3px;
+    width: 0%;
+    left: 0;
+    bottom: 4px;
+    transition: 0.3s;
+}
+.nav .nav-items a:hover:after{
+     width: 100%;
+}
+.nav .nav-items a:hover{
+    color: white;
+}
+.nav .nav-items span{
+    color: white;
+}
+
+.mobile-nav-toggle{
+    display: none;
+}
+.nav .nav-items a > [aria-hidden="true"]{
+    font-weight: 700;
+    margin-inline-end: 0.75rem;
+    font-size: 1.1rem;
+}
+
+
+@media (max-width: 45em){
+    .nav .nav-brand a{
+        transform: translate(-40px, -10px);
+        font-size: 1.5rem;
+        display: flex;
+    }
+    .nav .nav-items{
+        --gap: 2em;
+
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%;
+        flex-direction: column;
+        padding: min(20vh, 10rem) 2em;
+        background: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem);    
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+
+    }
+    .nav .nav-items[data-visible="true"]{
+        transform: translateX(0%);
+    }   
+    
+    .mobile-nav-toggle{
+        display: block;
+        position: absolute;
+        background: url(../assets/icon-hamburger.svg);
+        background-repeat: no-repeat;
+        border: 0;
+        z-index: 9999;
+        width: 2rem;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+        font-size: 0;
+        transform: translate(-10px);
+    }
+    .mobile-nav-toggle[aria-expanded = true]{
+        background: url(../assets/icon-close.svg);
+        background-repeat: no-repeat;
+    }
+}
+@media(min-width: 35em) and (max-width: 55em){
+    .nav .nav-items a > span[aria-hidden]{
+        display: none;
+    }
+}
+
+
+/* ---X---navbar---X---*/
+/*-------Main-------*/
+
+main .container{
+    padding-top: 10rem;
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    font-size: 5rem;
+    margin: 12px 30px 75px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+main .container h2{
+    font-family: 'Monsterrat', sans-serif;
+    margin-top: auto;
+
+}
+main .container span{
+   background: -webkit-linear-gradient(90deg , #0162c8, #55e7fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+main .container .button a{
+    bottom: 100%;
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    border-radius: 100px;
+    background: linear-gradient(90deg, #0162c8, #55e7fc);
+    transition-duration:0.3s;
+} 
+main .container .button a:hover{
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    transform: scale(1.1);
+}
+@media(max-width: 45em){
+    main .container {
+        width: fit-content;
+        font-size: 50px;
+        margin-top: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    main .container .button a {
+        font-size: 30px;
+        width: fit-content;
+        margin-top: 10%;
+    }
+}
+@media (min-width: 45em) and (max-width: 70em){
+    main .container{
+        font-size: 55px;
+    }
+}
+@media(max-width:35em){
+    main .container{
+        font-size: 40px;
+    }
+}
+@media(max-width:28em){
+    main .container{
+        font-size: 32px;
+    }
+    main .container .button a {
+        font-size: 32px;
+        width: fit-content;
+        margin-top: 60%;
+    }
+}
+@media(max-width:28em){
+    main .container{
+        font-size: 25px;
+    }
+    main .container .button a {
+        font-size: 32px;
+        width: fit-content;
+        margin-top: 60%;
+    }
+}
+/*---X---Main---X---*/
+
+
+/*-----Content-----*/
+main .site-content{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding-right: 200px;
+    padding-top: 80rem;
+}
+main .post-content{
+    margin-bottom: 2rem;
+}
+main .post-title a{
+    display: flex;
+    font-size: 20px;
+    padding-left: 6rem;
+    text-decoration: none;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom:2rem;
+    transform: translate(-60px, -77rem);
+}
+main .post-title > p{
+    font-size: 12px;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    transform: translate(20px, -77rem);
+}
+main .post-image img{
+    transform: translateY(-77rem);
+}

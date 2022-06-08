@@ -1,0 +1,234 @@
+html,body{
+    margin: 0%;
+    box-sizing: border-box;
+    background-image: url(../assets/Coding2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+:root{
+    --clr-primary: #7FDBFF;
+    --fs-700: 1.8rem;
+    --fs-400: 1.5rem;   
+}
+.resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
+  }
+/*-------Global Classes ------*/
+
+a{
+    text-decoration: none;
+    
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+ul{
+    list-style-type: none;
+}
+.flex{
+    display:flex;
+    gap: var(--gap, 1rem);
+}
+.grid{
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+.text-primary{
+    color: var(--clr-primary);
+}
+.grid--columns{
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+}
+
+/* -------navbar-------*/
+
+.nav{
+    padding: 0 2rem;
+    height: 0rem;
+    min-height: 15vh;
+    overflow: hidden;
+}
+.nav .nav-brand a{
+    font-size:2rem;
+    padding:1rem 1.5rem;
+    
+    position:relative;
+    top: 15%;
+    font-family: "Fira Sans Condensed Bold";
+    color: white;
+}
+.nav .nav-items{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.nav .nav-menu{
+    justify-content: space-between;
+    
+}
+.nav .nav-items .nav-link{
+    padding: 1rem 1.5rem;
+    position: relative;
+    font-size: 1.1rem;
+    font-family: Arial, "Time New Roman";
+    color: white;
+    
+}
+.nav .social{
+    padding:1.4rem 0;
+}
+.nav .nav-items a{
+    text-decoration: none;
+    color: white;
+    font-family: "Fira Sans Condensed Bold";
+    text-transform: uppercase;
+    font-size: 1rem;
+    display: inline-block;
+    
+
+
+}
+.nav .nav-items a:after{
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 3px;
+    width: 0%;
+    left: 0;
+    bottom: 4px;
+    transition: 0.3s;
+}
+.nav .nav-items a:hover:after{
+     width: 100%;
+}
+.nav .nav-items a:hover{
+    color: white;
+}
+.nav .nav-items span{
+    color: white;
+}
+
+.mobile-nav-toggle{
+    display: none;
+}
+.nav .nav-items a > [aria-hidden="true"]{
+    font-weight: 700;
+    margin-inline-end: 0.75rem;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 35em){
+    .nav .nav-brand a{
+        right: 30%;
+        top: 60%;
+        font-size: 1.8rem;
+    }
+    .nav .nav-items{
+        --gap: 2em;
+
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%;
+        flex-direction: column;
+        padding: min(20vh, 10rem) 2em;
+        background: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem);    
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+
+    }
+    .nav .nav-items[data-visible="true"]{
+        transform: translateX(0%);
+    }   
+    
+    .mobile-nav-toggle{
+        display: block;
+        position: absolute;
+        background: url(../assets/icon-hamburger.svg);
+        background-repeat: no-repeat;
+        border: 0;
+        z-index: 9999;
+        width: 2rem;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+        font-size: 0;
+    }
+    .mobile-nav-toggle[aria-expanded = true]{
+        background: url(../assets/icon-close.svg);
+        background-repeat: no-repeat;
+    }
+}
+@media(min-width: 35em) and (max-width: 55em){
+    .nav .nav-items a > span[aria-hidden]{
+        display: none;
+    }
+
+
+}
+
+
+/* ---X---navbar---X---*/
+/*-------Main-------*/
+
+main .container{
+    padding-top: 10rem;
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    font-size: 4rem;
+    margin: 15px 50px 75px 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+main .container .button a{
+    bottom: 100%;
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 40px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    border-radius: 100px;
+    background: linear-gradient(90deg, #0162c8, #55e7fc);
+} 
+
+main .container .button span{
+    position: absolute;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    border-radius: 50% ;
+    animation: animate 1s linear infinite;
+}
+@keyframes animate{
+    0%{
+        width: 0px;
+        height: 0px;
+    }
+    100%{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+
+/*---X---Main---X---*/
+
+
