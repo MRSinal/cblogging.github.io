@@ -7,6 +7,8 @@ body {
         margin-bottom: 4rem;
 }
 .high-score{
-    font-size: 2.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    margin-bottom: 0.2rem;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: bold;
 }

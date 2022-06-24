@@ -45,18 +45,56 @@ let questions = [
         answer : 4
     },
     {
-        question: 'A San Francisco-based wearable tech company owns this logo. What are they called? ',
-        choice1: 'Apple',
-        choice2: 'Fitbit',
-        choice3 : 'Microsoft',
-        choice4: 'Spotify',
-        answer : 2
-        
+       question : 'What is 1 Gigabyte (GB) = ',
+       choice1 : '1,000 Mb',
+       choice2 : '1,275 Mb',
+       choice3 : '1,024 Mb',
+       choice4 : '1,200 Mb',
+       answer : 3
     },
-
+    {
+        question : 'Who among the following has designed the JavaScript programing language?',
+        choice1 : 'Rasmus Lerdorf',
+        choice2 : 'Guido van Rossum',
+        choice3 : 'James Gosling',
+        choice4 : 'Brendan Eich',
+        answer : 4
+     },
+     {
+        question : 'USB is a ………………………… storage device.',
+        choice1 : 'Primary',
+        choice2 : 'Auxiliary',
+        choice3 : 'Secondary',
+        choice4 : 'Addition',
+        answer : 1
+     },
+     {
+        question : 'The largest unit of measuring computer storage capacity?',
+        choice1 : 'GB',
+        choice2 : 'TB',
+        choice3 : 'MB',
+        choice4 : 'KB',
+        answer : 2
+     },
+     {
+        question : "What is Apple's Operating System for Mac's called?",
+        choice1 : 'MS',
+        choice2 : 'Unix',
+        choice3 : 'APP',
+        choice4 : 'OS X',
+        answer : 4
+     },
+     {
+        question : "A computer use which type of number system to calculate and to store data",
+        choice1 : 'decimal',
+        choice2 : 'binary',
+        choice3 : 'hexadecimal',
+        choice4 : 'octal',
+        answer : 2
+     },
 ]
 const SCORE_POINT = 100
-const MAX_QUESTION = 6
+const MAX_QUESTION = 10
 
 startGame = () => {
     questionCounter = 0

@@ -220,15 +220,11 @@ ul{
   border: 0px solid white;
   margin: 20px;
 }
-.blog-img{
-  width: 100%;
-  height: auto;
-}
+
 .blog-img img{
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-  object-position: center;
+	height: 200px;
+	width: 100%;
 }
 .blog-text{
   padding: 30px;
